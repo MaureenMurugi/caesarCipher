@@ -30,4 +30,18 @@ class Encoding1Test {
        boolean expected = false;
         assertEquals(expected, encode.isValidKey());
     }
+
+    @Test
+    public void isValidKey_WhenInvalidKey_TRUE() {
+        Encoding1 encode = new Encoding1("A",1);
+        boolean expected = true;
+        assertEquals(expected, encode.isValidKey());
+    }
+
+    @Test
+    public void encodePText_OneLetterWord_C() {
+        Encoding1 encode = new Encoding1("A",2);
+        String expected = "C";
+        assertEquals(expected, encode.encodePText());
+    }
 }
