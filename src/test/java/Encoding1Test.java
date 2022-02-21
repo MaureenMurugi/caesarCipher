@@ -23,4 +23,11 @@ class Encoding1Test {
         int expected = 2;
         assertEquals(expected, encode.getcKey());
     }
+
+    @Test
+    public void isValidKey_WhenInvalidKey_FALSE() {
+        Encoding1 encode = new Encoding1("A",29);
+       boolean expected = false;
+        assertEquals(expected, encode.isValidKey());
+    }
 }

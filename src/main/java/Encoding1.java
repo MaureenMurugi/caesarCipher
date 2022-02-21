@@ -21,6 +21,9 @@ public class Encoding1 {
     public int getcKey(){
         return this.cKey;
     }
+    public boolean isValidKey() {
+        return (this.cKey >0 && this.cKey <=25);
+    }
 
     public String encodePText(){
         String words[] = this.getPText().split(" ");
