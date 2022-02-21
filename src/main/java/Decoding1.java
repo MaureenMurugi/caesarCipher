@@ -27,4 +27,25 @@ public class Decoding1 {
     public void setcKey(int cKey) {
         this.cKey = cKey;
     }
+    public String decodeEncodedText() {
+        String words[] = this.getEncodedText().split(" ");
+        List<String> reconstructed= new ArrayList<>();
+        for (String word: words) {
+            List<String>randomWord = new ArrayList<>();
+            char [] letters = word.toUpperCase().toCharArray();
+            for (char letter: letters){
+                if (listItems.contains(letter)){
+                    int resultIndex = (listItems.indexOf(letter)-this.cKey) < 0
+                            ? (listItems.indexOf(letter)-this.cKey)+alphabets.length:
+                            (listItems.indexOf(letter)-this.cKey);
+                    int newIndex = (resultIndex)%alphabets.length;
+                    randomWord.add(String.valueOf(alphabets[newIndex]));
+                }else {
+                    randomWord.add(String.valueOf(letter));
+                }
+            }
+            reconstructed.add(String.join("",randomWord));
+        }
+     return String.join(" ",reconstructed);
+    }
 }

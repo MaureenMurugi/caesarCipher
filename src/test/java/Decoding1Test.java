@@ -23,4 +23,18 @@ class Decoding1Test {
         int expected = 2;
         assertEquals(expected, decode.getcKey());
     }
+
+    @Test
+    public void decodeEncodedText_OneLetterWord_A() {
+        Decoding1 decode = new Decoding1("C",2);
+        String expected = "A";
+        assertEquals(expected, decode.decodeEncodedText());
+    }
+
+    @Test
+    public void decodeEncodedText_TwoLetterWord_AB() {
+        Decoding1 decode = new Decoding1("CD",2);
+        String expected = "AB";
+        assertEquals(expected, decode.decodeEncodedText());
+    }
 }
