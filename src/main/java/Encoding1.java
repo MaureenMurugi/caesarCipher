@@ -19,4 +19,15 @@ public class Encoding1 {
         return this.pText;
     }
 
+    public String encodePText(){
+        String words[] = this.getPText().split(" ");
+        List<String> reconstructed = new ArrayList<>();
+        for (String word: words){
+            List<String> randomWord = new ArrayList<>();
+            char [] letters = word.toUpperCase().toCharArray();
+
+            }
+        }
+        return null;
+    }
 }
