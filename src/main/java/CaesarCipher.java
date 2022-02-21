@@ -13,9 +13,10 @@ public class CaesarCipher {
         int cKey = myScanner.nextInt();
         Encoding1 encoding1 = new Encoding1(phrase,cKey);
         if(encoding1.isValidKey()){
-            Decoding1 decoding1 = new Decoding1(encoding1.encodePText(),cKey);
+            Decoding1 decoding1 = new Decoding1(encoding1.encodePText(),encoding1.getcKey());
             System.out.println("Input String: "+encoding1.getPText());
             System.out.println("Encrypted String: "+encoding1.encodePText());
+            System.out.println("Decrypted String: " +decoding1.decodeEncodedText()) ;
         }else {
             System.out.println("Error");
         }

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Decoding1 {
     private String encodedText;
@@ -10,7 +11,7 @@ public class Decoding1 {
     private final Character [] alphabets = {'A','B','C','D','E','F','G'
             ,'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X',
             'Y','Z'};
-    private final List<Character> listItems = Arrays.asList();
+    private final List<Character> listItems = Arrays.asList(alphabets);
 
 
     public Decoding1(String encodedText, int cKey) {
@@ -30,24 +31,22 @@ public class Decoding1 {
         this.cKey = cKey;
     }
     public String decodeEncodedText() {
-        String words[] = this.getEncodedText().split(" ");
-        List<String> reconstructed= new ArrayList<>();
-        for (String word: words) {
-            List<String>randomWord = new ArrayList<>();
-            char [] letters = word.toUpperCase().toCharArray();
-            for (char letter: letters){
-                if (listItems.contains(letter)){
-                    int resultIndex = (listItems.indexOf(letter)-this.cKey) < 0
-                            ? (listItems.indexOf(letter)-this.cKey)+alphabets.length:
-                            (listItems.indexOf(letter)-this.cKey);
-                    int newIndex = (resultIndex)%alphabets.length;
-                    randomWord.add(String.valueOf(alphabets[newIndex]));
-                }else {
-                    randomWord.add(String.valueOf(letter));
+       char [] words = this.getEncodedText().toUpperCase().toCharArray();
+        List<Character> reconstructed= new ArrayList<>();
+        for (char word: words) {
+            if (word == ' '){
+                reconstructed.add(' ');
+            }
+            for (char letter: listItems){
+                if (letter == word){
+
+                  int newIndex = (Math.abs(listItems.indexOf(letter) +(26-this.getcKey()) )%26);
+                  reconstructed.add(alphabets [newIndex]);
+
                 }
             }
-            reconstructed.add(String.join("",randomWord));
+
         }
-     return String.join(" ",reconstructed);
+     return reconstructed.stream().map(Object::toString).collect(Collectors.joining());
     }
 }
