@@ -18,6 +18,9 @@ public class Encoding1 {
     public String getPText(){
         return this.pText;
     }
+    public int getcKey(){
+        return this.cKey;
+    }
 
     public String encodePText(){
         String words[] = this.getPText().split(" ");
