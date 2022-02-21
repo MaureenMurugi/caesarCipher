@@ -14,8 +14,8 @@ public class CaesarCipher {
         Encoding1 encoding1 = new Encoding1(phrase,cKey);
         if(encoding1.isValidKey()){
             Decoding1 decoding1 = new Decoding1(encoding1.encodePText(),cKey);
-            System.out.println("Input String: "+encoding1.encodePText());
-            System.out.println("Encrypted String: "+decoding1.decodeEncodedText());
+            System.out.println("Input String: "+encoding1.getPText());
+            System.out.println("Encrypted String: "+encoding1.encodePText());
         }else {
             System.out.println("Error");
         }
