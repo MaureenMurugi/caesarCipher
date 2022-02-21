@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class Encoding1Test {
     @Test
     public void Encoding1_InstantiateClass() {
-        Encoding1 encode = new Encoding1("A",2);
+        Encoding1 encode = new Encoding1("a",2);
+        String expected = "a";
         assertEquals(true, encode instanceof Encoding1);
     }
 // Reads the users input

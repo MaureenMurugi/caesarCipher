@@ -36,20 +36,19 @@ public class Encoding1 {
     public String encodePText(){
         String words[] = this.getPText().split(" ");
         List<String> reconstructed = new ArrayList<>();
-        for (String word: words){
+        for(String word: words){
             List<String> randomWord = new ArrayList<>();
             char [] letters = word.toUpperCase().toCharArray();
-            for (char letter: letters){
-                if (listItems.contains(letter)){
-                    int newIndex = (listItems.indexOf(letter)+this.cKey
-                    )%alphabets.length;
+            for(char letter: letters){
+                if(listItems.contains(letter)){
+                    int newIndex  = (listItems.indexOf(letter)+this.cKey)%alphabets.length;
                     randomWord.add(String.valueOf(alphabets[newIndex]));
-                }else {
+                }else{
                     randomWord.add(String.valueOf(letter));
                 }
             }
             reconstructed.add(String.join("",randomWord));
         }
-        return String.join(" ", reconstructed);
+        return String.join(" ",reconstructed);
     }
 }
