@@ -51,4 +51,11 @@ class Encoding1Test {
         String expected = "CD";
         assertEquals(expected, encode.encodePText());
     }
+
+    @Test
+    public void encodePText_ManyLetterWord_CDEF() {
+        Encoding1 encode = new Encoding1("ABCD",2);
+        String expected = "CDEF";
+        assertEquals(expected, encode.encodePText());
+    }
 }
