@@ -9,4 +9,11 @@ class Encoding1Test {
         Encoding1 encode = new Encoding1("A",2);
         assertEquals(true, encode instanceof Encoding1);
     }
+// Reads the users input
+    @Test
+    public void Encoding1_getPText() {
+        Encoding1 encode = new Encoding1("A",2);
+        String expected = "A";
+        assertEquals(true, encode.getPText);
+    }
 }
