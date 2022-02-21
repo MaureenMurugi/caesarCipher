@@ -44,4 +44,11 @@ class Encoding1Test {
         String expected = "C";
         assertEquals(expected, encode.encodePText());
     }
+
+    @Test
+    public void encodePText_TwoLetterWord_CD() {
+        Encoding1 encode = new Encoding1("AB",2);
+        String expected = "CD";
+        assertEquals(expected, encode.encodePText());
+    }
 }

@@ -21,6 +21,12 @@ public class Encoding1 {
     public int getcKey(){
         return this.cKey;
     }
+    public void setpText(String pText) {
+        this.pText = pText;
+    }
+    public void setcKey(int cKey){
+        this.cKey = cKey;
+    }
     public boolean isValidKey() {
         return (this.cKey >0 && this.cKey <=25);
     }
