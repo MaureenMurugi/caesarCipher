@@ -15,5 +15,8 @@ public class Encoding1 {
         this.pText = pText;
         this.cKey = cKey;
     }
+    public String getPText(){
+        return this.pText;
+    }
 
 }

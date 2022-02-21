@@ -14,6 +14,6 @@ class Encoding1Test {
     public void Encoding1_getPText() {
         Encoding1 encode = new Encoding1("A",2);
         String expected = "A";
-        assertEquals(true, encode.getPText);
+        assertEquals(true, encode.getPText());
     }
 }
