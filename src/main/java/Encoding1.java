@@ -25,9 +25,17 @@ public class Encoding1 {
         for (String word: words){
             List<String> randomWord = new ArrayList<>();
             char [] letters = word.toUpperCase().toCharArray();
-
+            for (char letter: letters){
+                if (listItems.contains(letter)){
+                    int newIndex = (listItems.indexOf(letter)+this.cKey
+                    )%alphabets.length;
+                    randomWord.add(String.valueOf(alphabets[newIndex]));
+                }else {
+                    randomWord.add(String.valueOf(letter));
+                }
             }
+            reconstructed.add(String.join("",randomWord));
         }
-        return null;
+        return String.join(" ", reconstructed);
     }
 }

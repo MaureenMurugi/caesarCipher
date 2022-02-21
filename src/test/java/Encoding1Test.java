@@ -16,4 +16,11 @@ class Encoding1Test {
         String expected = "A";
         assertEquals(true, encode.getPText());
     }
+
+    @Test
+    public void Encoding1_getCKey() {
+        Encoding1 encode = new Encoding1("A",2);
+        int expected = 2;
+        assertEquals(true, encode.getCKey());
+    }
 }
